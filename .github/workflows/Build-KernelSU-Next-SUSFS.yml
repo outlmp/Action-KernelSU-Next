@@ -57,8 +57,8 @@ jobs:
       - name: Initialize repo and sync
         run: |
          mkdir kernel_workspace && cd kernel_workspace
-         repo init -u https://github.com/ztc1997/android_gki_kernel_5.10_common -b ${{ github.event.inputs.CPU }} --depth=1
-         repo sync
+         git clone https://github.com/ztc1997/android_gki_kernel_5.10_common -b ${{ github.event.inputs.CPU }}
+         
       - name: Set up KernelSU Next
         run: |
          cd kernel_workspace/kernel_platform
